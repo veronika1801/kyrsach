@@ -33,6 +33,7 @@
   <style>
     .moons{
         display: flex;
+        flex-wrap: wrap;
         gap: 80px;
     }
     

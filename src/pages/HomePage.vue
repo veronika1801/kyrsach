@@ -13,7 +13,7 @@
           <div class="navigations">
               <button class="navigation"><router-link class="router" to="/viewMoon">ЛУНЫ</router-link></button>
               <button class="navigation"><router-link  to=""></router-link>ПРЕДМЕТЫ</button>
-              <button class="navigation"><router-link  to=""></router-link>СУЩНОСТИ</button>
+              <button class="navigation"><router-link class="router" to="/viewMonster">СУЩНОСТИ</router-link></button>
               <button class="navigation"><router-link class="router" to="/viewTerminal">ТЕРМИРНАЛ</router-link></button>
               <button class="navigation"><router-link  to=""></router-link>ЛОМ</button>
           </div>
@@ -64,7 +64,11 @@
    .card_home {
     background-color: #D9D9D9;
     border-radius: 20px;
-    margin-top: 90px
+    margin-top: 90px;
+    display: flex;
+    justify-content: end;
+    width: 350px;
+    flex-direction: column;
    }
    .info_home{
     display: flex;

@@ -4,7 +4,8 @@ import RegistrationPage from "../pages/RegistrationPage.vue";
 import HomePage from "../pages/HomePage.vue";
 import AccountPage from "../pages/AccountPage.vue";
 import TerminalPage from "../pages/TerminalPage.vue";
-import MoonPage from "../pages/MoonPage.vue"
+import MoonPage from "../pages/MoonPage.vue";
+import MonsterPage from "../pages/MonsterPage.vue"
 
 const router = createRouter({
   
@@ -15,6 +16,11 @@ const router = createRouter({
       path: '/register',
       name: 'register',
       component: RegistrationPage
+    },
+    {
+      path: '/viewMonster',
+      name: 'viewMonster',
+      component: MonsterPage
     },
     {
       path: '/viewMoon',

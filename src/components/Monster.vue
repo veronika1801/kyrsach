@@ -1,21 +1,23 @@
- <template>
+<template>
     <div class="card_data">
         <!-- <p class="img_info">{{ props.moon.avatar }}</p> -->
         <img class="img_card" src="../assets/img/Lethal_Company_cover.jpg" alt="">
           <div class="info_card">
             <div>
               <p>НАЗВАНИЕ</p>
-              <p>СЛОЖНОСТЬ</p>
-              <p>ЦЕНА</p>
-              <p>КОЛ-ВО ПРЕДМЕТОВ</p>
-              <p>ПОГОДА</p>
+              <p>ЗДОРОВЬЕ</p>
+              <p>СИЛА УРОНА</p>
+              <p>КОЛ-ВО</p>
+              <p>ОГЛУШЕНИЕ</p>
+              <p>ЛУНА</p>
             </div>
         <div >    
-            <p>{{ props.moon.name }}</p>
-            <p >{{ props.moon.tier_id }} </p>
-            <p >{{ props.moon.cost }} </p>
-            <p>{{ props.moon.number_of_items }} </p>
-            <p>{{ props.moon.weather }} </p>
+            <p>{{ props.monster.name }}</p>
+            <p >{{ props.monster.healt }} </p>
+            <p >{{ props.monster.cost }} </p>
+            <p>{{ props.monster.quantity }} </p>
+            <p>{{ props.monster.stun_id }} </p>
+            <p>{{ props.monster.moons_id }} </p>
         </div>
             </div>
     </div>
@@ -29,7 +31,7 @@
   const router = useRouter();
   
   const props = defineProps({
-    moon: Object
+    monster: Object
   })
   
   </script>
