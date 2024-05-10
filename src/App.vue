@@ -1,5 +1,5 @@
 <template>
-  <div class="cap">
+  <div class="header">
   
     <router-link  to="/">
     <img class="logo" src="./assets/img/Site-logo.webp" >
@@ -7,10 +7,10 @@
     
       <div class="search">
           <input  type="text" name="search">
-          <button class="but">ПОИСК</button>
+          <button class="scan">ПОИСК</button>
           <div class="option">
-            <router-link to="" class="rout">ОБСУЖДЕНИЯ</router-link>
-            <label class="lab">LETHAL COMPANY</label>
+            <router-link to="" class="discussions">ОБСУЖДЕНИЯ</router-link>
+            <label class="lc">LETHAL COMPANY</label>
             <select class="opt">
               <option></option>
               <option></option>
@@ -72,13 +72,13 @@ const logoutUser = async () => {
     border:none;
     color:white;
   }
-  .lab{
+  .lc{
     margin-left:20px
   }
   .logo{
     height: 130px;
   }
-  .cap {
+  .header {
     display: flex;
     justify-content: space-between; 
     margin-top:40px;
@@ -96,7 +96,7 @@ const logoutUser = async () => {
     height:30px;
     
   }
-  .but{
+  .scan{
     background-color:	#8D8A8A;
     border-radius:20px;
     border: none;
@@ -105,7 +105,7 @@ const logoutUser = async () => {
     height:25px;
     color: white;
   }
-  .rout{
+  .discussions{
     color:white;
     text-decoration: none;
     font-size:15px;
@@ -127,9 +127,7 @@ const logoutUser = async () => {
     height:25px;
     width:350px
   }
-  .entry{
-    margin-right:20px;
-  }
+  
   input{
       background-color: #D9D9D9;
       border: none;

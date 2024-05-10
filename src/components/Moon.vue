@@ -1,7 +1,7 @@
  <template>
-    <div class="card">
+    <div class="card_data">
         <!-- <p class="img_info">{{ props.moon.avatar }}</p> -->
-        <img class="img_info" src="../assets/img/Lethal_Company_cover.jpg" alt="">
+        <img class="img_card" src="../assets/img/Lethal_Company_cover.jpg" alt="">
           <div class="info_card">
             <div>
               <p>НАЗВАНИЕ</p>
@@ -35,5 +35,9 @@
   </script>
 
 <style>
-
+    .card_data {
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    
+   }
 </style>

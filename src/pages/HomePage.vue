@@ -3,11 +3,11 @@
       <h1 >ГЛАВНАЯ</h1>
       <div class="info_home">
         <div class="text_home">
-          <p class="line">
+          <p class="text">
             Добро пожаловать на сайте, посвященному игре “LETHAL COMPANY”. 
   Здесь вы найдете все, что связано с игрой, а также проведете  время, общаясь и делясь информацией с другими пользователями. 
           </p>
-          <p class="line">
+          <p class="text">
             “LETHAL COMPANY” - кооперативная компьютерная игра в жанре хоррок. Управляемые персонажи - сотрудники компании, посещают  заброшенные промышленные луны, где им угрожают разного рода опасности. В каждой игровой сессии игроки разыскивают металлолом в комплексах, пытаясь донести его до корабля. 
           </p>
           <div class="navigations">
@@ -18,8 +18,8 @@
               <button class="navigation"><router-link  to=""></router-link>ЛОМ</button>
           </div>
         </div>
-        <div class="card">
-          <img class="img_info" src="../assets/img/Lethal_Company_cover.jpg" alt="">
+        <div class="card_home">
+          <img class="img_card" src="../assets/img/Lethal_Company_cover.jpg" alt="">
           <div class="info_card">
             <div >
               <p>РАЗРАБОТЧИК</p>
@@ -43,7 +43,7 @@
     </div>
   </template>
   <style>
-  .line { 
+  .text { 
     border-bottom: 2px solid #ccc; 
     padding-top: 65px;
     padding-bottom: 65px; 
@@ -61,7 +61,7 @@
     
    }
    
-   .card {
+   .card_home {
     background-color: #D9D9D9;
     border-radius: 20px;
     margin-top: 90px
@@ -72,7 +72,7 @@
     
     
    }
-   .img_info{
+   .img_card{
     width: 350px;
     height: 380px;
     /* margin-top: 20px; */
@@ -99,7 +99,6 @@
     border-radius:20px;
     color: black;
     border: none;
-    
     height:30px;
     width:100px ;
     
