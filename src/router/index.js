@@ -2,10 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginPage from "../pages/LoginPage.vue";
 import RegistrationPage from "../pages/RegistrationPage.vue";
 import HomePage from "../pages/HomePage.vue";
-import AccountPage from "../pages/AccountPage.vue";
+import UserPage from "../pages/UserPage.vue";
 import TerminalPage from "../pages/TerminalPage.vue";
 import MoonPage from "../pages/MoonPage.vue";
-import MonsterPage from "../pages/MonsterPage.vue"
+import MonsterPage from "../pages/MonsterPage.vue";
+import ItemPage from "../pages/ItemPage.vue"
 
 const router = createRouter({
   
@@ -16,6 +17,11 @@ const router = createRouter({
       path: '/register',
       name: 'register',
       component: RegistrationPage
+    },
+    {
+      path: '/viewItem',
+      name: 'viewItem',
+      component: ItemPage
     },
     {
       path: '/viewMonster',
@@ -35,7 +41,7 @@ const router = createRouter({
     {
       path: '/profile',
       name: 'profile',
-      component: AccountPage
+      component: UserPage
     },
     {
       path: '/login',

@@ -2,14 +2,14 @@
     <div class="title">
       <h1>СУЩНОСТИ</h1>
     </div>
-        <div class="monster">
+        <div class="info">
             <Monster v-for="monster in monster"  :monster="monster"></Monster>
         </div>
 </template>
   
   <script setup>
   
-  import monster from "../components/Monster.vue";
+  import Monster from "../components/Monster.vue";
   
   
   import {onMounted, ref} from "vue";
@@ -31,10 +31,6 @@
   </script>
   
   <style>
-    .moons{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 80px;
-    }
+    
     
   </style>

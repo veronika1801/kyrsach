@@ -1,6 +1,6 @@
 <template>
     <div class="card_data">
-        <!-- <p class="img_info">{{ props.moon.avatar }}</p> -->
+        <!-- <p class="img_info">{{ props.monster.avatar }}</p> -->
         <img class="img_card" src="../assets/img/Lethal_Company_cover.jpg" alt="">
           <div class="info_card">
             <div>
@@ -14,7 +14,7 @@
         <div >    
             <p>{{ props.monster.name }}</p>
             <p >{{ props.monster.healt }} </p>
-            <p >{{ props.monster.cost }} </p>
+            <p >{{ props.monster.damage }} </p>
             <p>{{ props.monster.quantity }} </p>
             <p>{{ props.monster.stun_id }} </p>
             <p>{{ props.monster.moons_id }} </p>
@@ -37,15 +37,5 @@
   </script>
 
 <style>
-    .card_data {
-    background-color: #D9D9D9;
-    border-radius: 20px;
-    background-color: #D9D9D9;
-    border-radius: 20px;
-    display: flex;
-    justify-content: end;
-    width: 350px;
-    flex-direction: column;
     
-   }
 </style>

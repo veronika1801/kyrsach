@@ -12,7 +12,7 @@
           </p>
           <div class="navigations">
               <button class="navigation"><router-link class="router" to="/viewMoon">ЛУНЫ</router-link></button>
-              <button class="navigation"><router-link  to=""></router-link>ПРЕДМЕТЫ</button>
+              <button class="navigation"><router-link class="router" to="/viewItem">ПРЕДМЕТЫ</router-link></button>
               <button class="navigation"><router-link class="router" to="/viewMonster">СУЩНОСТИ</router-link></button>
               <button class="navigation"><router-link class="router" to="/viewTerminal">ТЕРМИРНАЛ</router-link></button>
               <button class="navigation"><router-link  to=""></router-link>ЛОМ</button>

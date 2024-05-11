@@ -21,12 +21,12 @@
   
           
       </div>
-    <nav class="nav">
-          <span v-if="!setToken">
+    <nav >
+          <span class="nav" v-if="!setToken">
             <button class="button"><router-link class="router" to="/login">ВХОД</router-link> </button>
             <button class="button"><router-link class="router" to="/register">РЕГИСТРАЦИЯ</router-link> </button>
           </span>
-          <span  v-else>
+          <span class="nav" v-else>
             <button class="button" @click="logoutUser">ВЫХОД</button>
             <button class="button"> <router-link class="router" to="/profile">АККАУНТ</router-link> </button>
             
@@ -66,7 +66,10 @@ const logoutUser = async () => {
     font-family: Avenir, Helvetica, Arial, sans-serif; 
     /* height: 1920px */
   }
-
+  .nav{
+    display: flex;
+    gap: 30px
+  }
   .opt{
     background-color:#232323;
     border:none;
@@ -114,10 +117,7 @@ const logoutUser = async () => {
     text-decoration: none;
     color: black
   }
-  .nav {
-    display:flex;
   
-  }
   .search{
     display: inline-block;
     

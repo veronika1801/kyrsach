@@ -7,15 +7,10 @@ export async function registerUser({ login, password }) {
                 'Content-Type': 'application/json',
             }
         });
-        
-        
         if (response.status === 200) {                              
-
             const token = response.data.token;
-            
             localStorage.setItem('token', token);
             return { token, error: null };
-            
         } else {
             throw new Error('Ошибка регистрации');
         }
