@@ -15,7 +15,7 @@
               <button class="navigation"><router-link class="router" to="/viewItem">ПРЕДМЕТЫ</router-link></button>
               <button class="navigation"><router-link class="router" to="/viewMonster">СУЩНОСТИ</router-link></button>
               <button class="navigation"><router-link class="router" to="/viewTerminal">ТЕРМИРНАЛ</router-link></button>
-              <button class="navigation"><router-link  to=""></router-link>ЛОМ</button>
+              <button class="navigation"><router-link class="router" to="/viewScrab">ЛОМ</router-link></button>
           </div>
         </div>
         <div class="card_home">
@@ -87,9 +87,10 @@
     color: black;
     gap: 100px;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 7px;
+    height: 300px;
     
-    line-height: 1.5;
+    line-height: 2;
    }
    .navigations {
     display: flex;

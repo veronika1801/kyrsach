@@ -1,6 +1,7 @@
 <template>
     <div class="title">
       <h1>СУЩНОСТИ</h1>
+      <button class="add" v-if="role_id==1"><router-link class="router" to="/Add_monster">ДОБАВИТЬ</router-link></button>
     </div>
         <div class="info">
             <Monster v-for="monster in monster"  :monster="monster"></Monster>
@@ -14,7 +15,7 @@
   
   import {onMounted, ref} from "vue";
   import {getMonster} from "../api/monster.js";
-  
+  let role_id = ref(localStorage.getItem('role_id'));
   const monster = ref([]);
   
   const renderMonster = async () => {

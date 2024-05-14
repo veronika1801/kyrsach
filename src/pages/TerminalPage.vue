@@ -1,6 +1,7 @@
 <template>
   <div class="title">
     <h1>ТЕРМИНАЛ</h1>
+    <button class="add" v-if="role_id==1"><router-link class="router" to="/Add_terminal">ДОБАВИТЬ</router-link></button>
   </div>
   <div class="test">
     <div class="terminal">
@@ -20,7 +21,7 @@ import Terminal from "../components/Terminal.vue";
 
 import {onMounted, ref} from "vue";
 import {getTerminal} from "../api/terminal.js";
-
+let role_id = ref(localStorage.getItem('role_id'));
 const terminal = ref([]);
 
 const renderTerminal = async () => {

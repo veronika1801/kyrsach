@@ -1,17 +1,17 @@
 import axios from "axios";
 
-export async function getTerminal() {
+export async function getScrab() {
     try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/viewTerminal`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/viewScrab`);
         return response.data;
     } catch (error) {
-        console.error("Error fetching terminal:", error);
+        console.error("Error fetching scrab:", error);
         throw error;
     }
 }
-export async function deleteTerminal({ id }) {
+export async function deleteScrab({ id }) {
     try {
-        const response = await axios.post(`${import.meta.env.VITE_API_URL}/deleteTerminal`, { id }, {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/deleteScrab`, { id }, {
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -22,9 +22,9 @@ export async function deleteTerminal({ id }) {
         throw error;
     }
 }
-export async function addTerminal({title, description }) {
+export async function addScrab({ name, min_cost, max_cost, weight, conducts_electricity_id, two_handed_id }) {
     try {
-        const response = await axios.post(`${import.meta.env.VITE_API_URL}/createTerminal`, {title, description }, {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/createScrab`, { name, min_cost, max_cost, weight, conducts_electricity_id, two_handed_id  }, {
             headers: {
                 'Content-Type': 'application/json',
             }

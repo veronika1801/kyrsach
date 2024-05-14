@@ -1,5 +1,9 @@
 <template>
     <div class="card_data">
+    <div class="button_card" v-if="role_id==1">
+      <button class="redact"><router-link class="router" to="">РЕДАКТИРОВАТЬ</router-link></button>
+      <button class="delete" @click="deleted">Х</button>
+    </div>
         <!-- <p class="img_info">{{ props.item.avatar }}</p> -->
         <img class="img_card" src="../assets/img/Lethal_Company_cover.jpg" alt="">
           <div class="info_card">
@@ -13,22 +17,20 @@
             </div>
         <div >    
             <p>{{ props.item.name }}</p>
-            <!-- заменить таблицу с type_id -->
-            <p >{{ props.item.type_id }} </p> 
+            <p >{{ type }} </p> 
             <p >{{ props.item.cost }} </p>
             <p>{{ props.item.weight }} </p>
-            <!-- заменить таблицу с presence_of_battery_id -->
-            <p>{{ props.item.presence_of_battery_id }} </p>
-            <!-- заменить таблицу с conducts_electricity_id -->
-            <p>{{ props.item.conducts_electricity_id }} </p>
+            <p>{{ battery }} </p>
+            <p>{{ electricity }} </p>
         </div>
             </div>
     </div>
   </template>
   <script setup>
-
-  import {useStore} from "vuex";
-  const store = useStore();
+  import { ref } from "vue";
+  import {deleteItem} from "../api/item.js";
+  // import {useStore} from "vuex";
+  // const store = useStore();
   
   import { useRouter } from "vue-router";
   const router = useRouter();
@@ -36,6 +38,48 @@
   const props = defineProps({
     item: Object
   })
+const type_id = props.item.type_id;
+let type =0 
+switch (type_id) {
+  case 1:
+  type = "механизм"
+    break;
+    case 2:
+    type = "оружие"
+    break;
+}
+const presence_of_battery_id = props.item.presence_of_battery_id;
+let battery =0 
+switch (presence_of_battery_id) {
+  case 1:
+  battery = "да"
+    break;
+    case 2:
+    battery = "нет"
+    break;
+}
+const conducts_electricity_id = props.item.conducts_electricity_id;
+let electricity =0 
+switch (conducts_electricity_id) {
+  case 1:
+  electricity = "да"
+    break;
+    case 2:
+    electricity = "нет"
+    break;
+}
+
+let role_id = ref(localStorage.getItem('role_id'));
+const emit = defineEmits(['delete']);
+
+const deletedItem = {
+id: props.item.id
+}
+
+async function deleted() {
+await deleteItem(deletedItem);
+
+}
   
   </script>
 

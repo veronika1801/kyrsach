@@ -9,7 +9,7 @@
           <input  type="text" name="search">
           <button class="scan">ПОИСК</button>
           <div class="option">
-            <router-link to="" class="discussions">ОБСУЖДЕНИЯ</router-link>
+            <router-link to="/viewDiscussions" class="discussions">ОБСУЖДЕНИЯ</router-link>
             <label class="lc">LETHAL COMPANY</label>
             <select class="opt">
               <option></option>
@@ -43,15 +43,18 @@ import { logout } from "./api/logout.js";
 
 const router = useRouter();
 let setToken = ref(localStorage.getItem('token'));
+let setRole = ref(localStorage.getItem('role_id'));
 
 const logoutUser = async () => {
  
     await logout();
-    
+    setRole = null;
     setToken = null;
     router.push('/login');
   
 }
+
+  
 </script>
 
   

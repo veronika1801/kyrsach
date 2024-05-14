@@ -12,12 +12,22 @@ export async function getMoon() {
 }
 export async function deleteMoon({ id }) {
     try {
-        const token = localStorage.getItem('token');
-        const response = await axios.delete(`${import.meta.env.VITE_API_URL}/deleteMoons`, {id}, {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/deleteMoon`, { id }, {
             headers: {
-                Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error deleting from moon:", error);
+        throw error;
+    }
+}
+export async function addMoon({ name, tier_id, cost, number_of_items, weather }) {
+    try {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/createMoon`, { name, tier_id, cost, number_of_items, weather  }, {
+            headers: {
+                'Content-Type': 'application/json',
             }
         });
         return response.data;

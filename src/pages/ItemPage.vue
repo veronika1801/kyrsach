@@ -1,6 +1,7 @@
 <template>
     <div class="title">
       <h1>ПРЕДМЕТЫ</h1>
+      <button class="add" v-if="role_id==1"><router-link class="router" to="/Add_item">ДОБАВИТЬ</router-link></button>
     </div>
         <div class="info">
             <Item v-for="item in item"  :item="item"></Item>
@@ -14,7 +15,7 @@
   
   import {onMounted, ref} from "vue";
   import {getItem} from "../api/item.js";
-  
+  let role_id = ref(localStorage.getItem('role_id'));
   const item = ref([]);
   
   const renderItem = async () => {
@@ -31,10 +32,6 @@
   </script>
   
   <style>
-    .moons{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 80px;
-    }
+  
     
   </style>
