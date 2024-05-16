@@ -11,10 +11,8 @@ export async function getItem() {
 }
 export async function deleteItem({ id }) {
     try {
-        const response = await axios.post(`${import.meta.env.VITE_API_URL}/deleteItem`, { id }, {
-            headers: {
-                'Content-Type': 'application/json',
-            }
+        const response = await axios.delete(`${import.meta.env.VITE_API_URL}/deleteItem?id=${ id }`, {
+           
         });
         return response.data;
     } catch (error) {

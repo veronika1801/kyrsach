@@ -12,7 +12,7 @@
   
   import Monster from "../components/Monster.vue";
   
-  
+ 
   import {onMounted, ref} from "vue";
   import {getMonster} from "../api/monster.js";
   let role_id = ref(localStorage.getItem('role_id'));
@@ -26,8 +26,12 @@
     }
   };
   
+ 
+        
+  
   onMounted(async () => {
     await renderMonster();
+   
   });
   </script>
   

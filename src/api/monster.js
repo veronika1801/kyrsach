@@ -11,10 +11,8 @@ export async function getMonster() {
 }
 export async function deleteMonster({ id }) {
     try {
-        const response = await axios.post(`${import.meta.env.VITE_API_URL}/deleteMonster`, { id }, {
-            headers: {
-                'Content-Type': 'application/json',
-            }
+        const response = await axios.delete(`${import.meta.env.VITE_API_URL}/deleteMonster?id=${ id }`, {
+            
         });
         return response.data;
     } catch (error) {
@@ -35,9 +33,9 @@ export async function addMonster({ name, healt, damage, quantity, stun_id, moons
         throw error;
     }
 }
-export async function redactMonster({id, name, healt, damage, quantity, stun_id, moons_id }) {
+export async function redactMonster({id, name, healt, damage, quantity, stun_id}) {
     try {
-        const response = await axios.put(`${import.meta.env.VITE_API_URL}/redactMonster`, {id, name, healt, damage, quantity, stun_id, moons_id  }, {
+        const response = await axios.put(`${import.meta.env.VITE_API_URL}/redactMonster?id=${id}`, { name, healt, damage, quantity, stun_id }, {
             headers: {
                 'Content-Type': 'application/json',
             }

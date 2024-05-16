@@ -11,10 +11,8 @@ export async function getScrab() {
 }
 export async function deleteScrab({ id }) {
     try {
-        const response = await axios.post(`${import.meta.env.VITE_API_URL}/deleteScrab`, { id }, {
-            headers: {
-                'Content-Type': 'application/json',
-            }
+        const response = await axios.delete(`${import.meta.env.VITE_API_URL}/deleteScrab?id=${ id }`, {
+           
         });
         return response.data;
     } catch (error) {

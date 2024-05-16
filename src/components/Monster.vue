@@ -1,7 +1,7 @@
 <template>
     <div class="card_data">
       <div class="button_card" v-if="role_id==1">
-      <button class="redact"><router-link class="router" to="/Redact_monster">РЕДАКТИРОВАТЬ</router-link></button>
+      <button class="redact"><router-link class="router" :to="{ name: 'Redact_monster', params: { id: props.monster.id, name: props.monster.name, healt: props.monster.healt, damage: props.monster.damage, quantity: props.monster.quantity, stun_id: props.monster.stun_id  } }">РЕДАКТИРОВАТЬ</router-link></button>
       
       <button class="delete" @click="deleted">Х</button>
     </div>
@@ -31,7 +31,7 @@
   <script setup>
 import { ref } from "vue";
 import {deleteMonster} from "../api/monster.js";
-
+// import {redactMonster} from "../api/monster.js";
   // import {useStore} from "vuex";
   // const store = useStore();
   
@@ -57,14 +57,14 @@ const emit = defineEmits(['delete']);
 const deletedMonster = {
 id: props.monster.id
 }
-// const redactedMonster = {
+// `const redactedMonster = {
 // id: props.monster.id,
 // name: props.monster.name,
 // healt: props.monster.healt,
 // damage: props.monster.damage,
 // quantity: props.monster.quantity,
 // stun_id: props.monster.stun_id,
-// }
+// }`
 
 
 

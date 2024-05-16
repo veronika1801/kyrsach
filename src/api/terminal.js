@@ -11,10 +11,8 @@ export async function getTerminal() {
 }
 export async function deleteTerminal({ id }) {
     try {
-        const response = await axios.post(`${import.meta.env.VITE_API_URL}/deleteTerminal`, { id }, {
-            headers: {
-                'Content-Type': 'application/json',
-            }
+        const response = await axios.delete(`${import.meta.env.VITE_API_URL}/deleteTerminal?id=${ id }`, {
+          
         });
         return response.data;
     } catch (error) {

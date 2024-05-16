@@ -15,7 +15,7 @@ import Add_scrab from "../components/Add_scrab.vue";
 import Add_item from "../components/Add_item.vue";
 import Add_terminal from "../components/Add_terminal.vue";
 import Add_discussions from "../components/Add_discussions.vue";
-// import Redact_monster from "../components/Redact_monster.vue";
+import Redact_monster from "../components/Redact_monster.vue";
 
 const router = createRouter({
   
@@ -62,11 +62,12 @@ const router = createRouter({
       name: 'Add_scrab',
       component: Add_scrab
     },
-    // {
-    //   path: '/Redact_monster',
-    //   name: 'Redact_monster',
-    //   component: Redact_monster
-    // },
+    {
+      path: '/Redact_monster/:id',
+      name: 'Redact_monster',
+      component: Redact_monster,
+      props: true 
+    },
     {
       path: '/Add_monster',
       name: 'Add_monster',
@@ -110,6 +111,8 @@ const router = createRouter({
     },
     
   ]
+  
+ 
   
 })
 

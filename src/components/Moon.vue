@@ -66,8 +66,6 @@ const deletedMoon = {
 id: props.moon.id
 }
 
-
-
 async function deleted() {
 await deleteMoon(deletedMoon);
 

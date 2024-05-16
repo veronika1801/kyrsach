@@ -1,21 +1,21 @@
-<!-- <template>
+<template>
     <div class="login">
-      <form  @submit.prevent="redact">
+      <form  @submit.prevent="redacted">
       <h1>РЕДАКТИРОВАНИЕ СУЩНОСТИ</h1>
-        <input type="text" v-model= "props.monster.name">
-        <input class="input" type="text"  v-model= "props.monster.healt" required/>
-        <input class="input" type="number"  v-model= "props.monster.damage" required/>
-        <input class="input" type="number"  v-model= "props.monster.quantity" required/>
+        <input class="input" type="text" v-model= "monster.name">
+        <input class="input" type="text"  v-model= "monster.healt" required/>
+        <input class="input" type="number"  v-model= "monster.damage" required/>
+        <input class="input" type="number"  v-model= "monster.quantity" required/>
         <p class="form_text">ИМЕЕТСЯ ЛИ ОГЛУШЕНИЕ:</p>
        
-       <select class="select"  v-model= "props.monster.stun_id" >
+       <select class="select"  v-model= "monster.stun_id" >
               <option value="1">да</option>
               <option value="2">нет</option>
               
             </select> 
         
       <div>
-        <button class="but_reg" type="submit">РЕДАКТИРОВАТЬ</button>
+        <button class="but_reg" type="submit" >РЕДАКТИРОВАТЬ</button>
         
       </div>
     </form>
@@ -24,24 +24,33 @@
   </template>
 
 <script setup>
-
+import {ref } from "vue";
 import {redactMonster} from "../api/monster.js";
 import { useRouter } from "vue-router";
-import {redactedMonster} from "../components/Monster.vue";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
 const router = useRouter();
 
-const props = defineProps({
-  monster: Object
-})
+
+const monster = ref({
+  id: route.params.id,
+  name: route.params.name,
+  healt: route.params.healt,
+  damage: route.params.damage,
+  quantity: route.params.quantity,
+  stun_id: route.params.stun_id,
+  
+});
 
 
-async function redact() {
+async function redacted() {
  
- await redactMonster();
+ await redactMonster(monster.value);
  router.push('/viewMonster')
 
 }
+
 
 
 </script>
@@ -56,4 +65,4 @@ async function redact() {
   margin-left: 100px;
 
  }
-</style> -->
+</style>
