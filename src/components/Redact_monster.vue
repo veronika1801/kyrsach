@@ -1,7 +1,7 @@
 <!-- <template>
     <div class="login">
       <form  @submit.prevent="redact">
-      <h1>СОЗДАНИЕ СУЩНОСТИ</h1>
+      <h1>РЕДАКТИРОВАНИЕ СУЩНОСТИ</h1>
         <input type="text" v-model= "props.monster.name">
         <input class="input" type="text"  v-model= "props.monster.healt" required/>
         <input class="input" type="number"  v-model= "props.monster.damage" required/>
@@ -15,7 +15,7 @@
             </select> 
         
       <div>
-        <button class="but_reg" type="submit">ДОБАВИТЬ</button>
+        <button class="but_reg" type="submit">РЕДАКТИРОВАТЬ</button>
         
       </div>
     </form>
@@ -34,6 +34,7 @@ const router = useRouter();
 const props = defineProps({
   monster: Object
 })
+
 
 async function redact() {
  
