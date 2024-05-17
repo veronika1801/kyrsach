@@ -33,3 +33,16 @@ export async function addScrab({ name, min_cost, max_cost, weight, conducts_elec
         throw error;
     }
 }
+export async function redactScrab({id, name, min_cost, max_cost, weight, conducts_electricity_id, two_handed_id}) {
+    try {
+        const response = await axios.put(`${import.meta.env.VITE_API_URL}/redactScrab?id=${id}`, { name, min_cost, max_cost, weight, conducts_electricity_id, two_handed_id }, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error deleting from moon:", error);
+        throw error;
+    }
+}

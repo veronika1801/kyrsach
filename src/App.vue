@@ -10,11 +10,13 @@
           <button class="scan">ПОИСК</button>
           <div class="option">
             <router-link to="/viewDiscussions" class="discussions">ОБСУЖДЕНИЯ</router-link>
-            <label class="lc">LETHAL COMPANY</label>
-            <select class="opt">
-              <option></option>
-              <option></option>
-              <option></option>
+            
+            
+            <select class="opt" @change="handleSelect">
+              <option value="/">LETHAL COMPANY</option>
+              <option value="/viewMoon">ЛУНЫ</option>
+              <option value="/viewMonster">МОНСТРЫ</option>
+              <option value="/viewItem">ПРЕДМЕТЫ</option>
               
             </select>
           </div>
@@ -53,6 +55,10 @@ const logoutUser = async () => {
     router.push('/login');
   
 }
+const handleSelect = (event) => {
+  const selectedPath = event.target.value;
+  router.push(selectedPath);
+};
 
   
 </script>
@@ -73,6 +79,7 @@ const logoutUser = async () => {
     display: flex;
     gap: 30px
   }
+  
   .opt{
     background-color:#232323;
     border:none;
@@ -81,6 +88,7 @@ const logoutUser = async () => {
   .lc{
     margin-left:20px
   }
+ 
   .logo{
     height: 130px;
   }
@@ -91,25 +99,28 @@ const logoutUser = async () => {
   }
   .option{
     margin-top:70px;
-    
+    display: flex;
+    justify-content: space-around;
   }
   button {
-    background-color:	#D9D9D9;
+    background-color:	#232323;
     border-radius:20px;
-    color: black;
-    border: none;
+    color: white;
+    border: 2px red solid;
     padding:6px;
     height:30px;
     
   }
   .scan{
-    background-color:	#8D8A8A;
+    background-color:	#D9D9D9;
     border-radius:20px;
     border: none;
-    margin-left: 80px;
     width:80px;
     height:25px;
-    color: white;
+    color: black;
+    border: 2px red solid;
+    margin-left: 40px;
+    
   }
   .discussions{
     color:white;
@@ -118,7 +129,7 @@ const logoutUser = async () => {
   }
   .router {
     text-decoration: none;
-    color: black
+    color: white
   }
   
   .search{

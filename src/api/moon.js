@@ -34,3 +34,16 @@ export async function addMoon({ name, tier_id, cost, number_of_items, weather })
         throw error;
     }
 }
+export async function redactMoon({id, name, tier_id, cost, number_of_items, weather}) {
+    try {
+        const response = await axios.put(`${import.meta.env.VITE_API_URL}/redactMoon?id=${id}`, { name, tier_id, cost, number_of_items, weather }, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error deleting from moon:", error);
+        throw error;
+    }
+}

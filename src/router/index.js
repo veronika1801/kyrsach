@@ -16,6 +16,10 @@ import Add_item from "../components/Add_item.vue";
 import Add_terminal from "../components/Add_terminal.vue";
 import Add_discussions from "../components/Add_discussions.vue";
 import Redact_monster from "../components/Redact_monster.vue";
+import Redact_moon from "../components/Redact_moon.vue";
+import Redact_item from "../components/Redact_item.vue";
+import Redact_scrab from "../components/Redact_scrab.vue";
+import Redact_terminal from "../components/Redact_terminal.vue";
 
 const router = createRouter({
   
@@ -66,6 +70,30 @@ const router = createRouter({
       path: '/Redact_monster/:id',
       name: 'Redact_monster',
       component: Redact_monster,
+      props: true 
+    },
+    {
+      path: '/Redact_scrab/:id',
+      name: 'Redact_scrab',
+      component: Redact_scrab,
+      props: true 
+    },
+    {
+      path: '/Redact_terminal/:id',
+      name: 'Redact_terminal',
+      component: Redact_terminal,
+      props: true 
+    },
+    {
+      path: '/Redact_item/:id',
+      name: 'Redact_item',
+      component: Redact_item,
+      props: true 
+    },
+    {
+      path: '/Redact_moon/:id',
+      name: 'Redact_moon',
+      component: Redact_moon,
       props: true 
     },
     {

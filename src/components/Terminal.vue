@@ -6,7 +6,8 @@
     <!-- <p class="terminal-delete">X</p> -->
     <div class="button_card_terminal" v-if="role_id==1">
     <button class="terminal-delete" @click="deleted">Х</button>
-    <button class="terminal-redact"><router-link class="terminal_redact" to="">РЕДАКТИРОВАТЬ</router-link></button>
+    <button class="terminal-redact"><router-link class="router" :to="{ name: 'Redact_terminal', params: { id: props.terminal.id, title: props.terminal.title, description: props.terminal.description } }">РЕДАКТИРОВАТЬ</router-link></button>
+    
   </div>
   </div>
 </template>
@@ -79,16 +80,17 @@ await deleteTerminal(deletedTerminal);
     background-color: #232323; 
     padding-top: 40px;
     font-size: 20px;
+    border:none;
   }
   .terminal-redact{
     background-color: #232323; 
     padding-top: 40px;
-    
-  }
-  .terminal_redact{
+    border:none;
     color: white;
     text-decoration: none;
+    
   }
+ 
   .button_card_terminal{
     display: flex;
     gap: 10px;

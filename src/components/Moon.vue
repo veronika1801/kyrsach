@@ -1,8 +1,8 @@
 <template>
   <div class="card_data" >
     <div class="button_card" v-if="role_id==1">
-      <button class="redact">РЕДАКТИРОВАТЬ</button>
-      <button class="delete" @click="deleted">Х</button>
+      <button class="redact"><router-link class="router-redact" :to="{ name: 'Redact_moon', params: { id: props.moon.id, name: props.moon.name, tier_id: props.moon.tier_id, cost: props.moon.cost, number_of_items: props.moon.number_of_items, weather: props.moon.weather  } }">РЕДАКТИРОВАТЬ</router-link></button>
+      <button class="delete" @click="deleted">Х</button> 
     </div>
       <!-- <p class="img_info">{{ props.moon.avatar }}</p> -->
       <img class="img_card" src="../assets/img/Lethal_Company_cover.jpg" alt="">
@@ -16,9 +16,6 @@
           </div>
       <div >    
           <p>{{ props.moon.name }}</p>
-          <!-- заменить таблицу с tier_id -->
-          
-
           <p >{{ tier }} </p>
           <p >{{ props.moon.cost }} </p>
           <p>{{ props.moon.number_of_items }} </p>
@@ -69,6 +66,7 @@ id: props.moon.id
 async function deleted() {
 await deleteMoon(deletedMoon);
 
+
 }
 
 
@@ -95,17 +93,23 @@ await deleteMoon(deletedMoon);
   
  }
  .redact{
-  background-color: #BFBFBF;
+  background-color: #D9D9D9;
   height: 20px;
   display: flex;
   align-items: center;
-  color: black
+  color: black;
+  border:none;
  }
  .delete{
-  background-color: #BFBFBF;
+  background-color: #D9D9D9;
   width: 25px;
   height: 25px;
   border-radius: 7px;
-  color: black
+  color: black;
+  border:none;
+  font-size:20px;
+  display: flex;
+  align-items: center;
+
  }
 </style>

@@ -20,9 +20,9 @@ export async function deleteMonster({ id }) {
         throw error;
     }
 }
-export async function addMonster({ name, healt, damage, quantity, stun_id, moons_id }) {
+export async function addMonster({ name, healt, damage, quantity, stun_id}) {
     try {
-        const response = await axios.post(`${import.meta.env.VITE_API_URL}/createMonster`, { name, healt, damage, quantity, stun_id, moons_id  }, {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/createMonster`, { name, healt, damage, quantity, stun_id }, {
             headers: {
                 'Content-Type': 'application/json',
             }

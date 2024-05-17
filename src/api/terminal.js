@@ -33,3 +33,16 @@ export async function addTerminal({title, description }) {
         throw error;
     }
 }
+export async function redactTerminal({id, title, description}) {
+    try {
+        const response = await axios.put(`${import.meta.env.VITE_API_URL}/redactTerminal?id=${id}`, { title, description }, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error deleting from moon:", error);
+        throw error;
+    }
+}
