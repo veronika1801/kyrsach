@@ -2,10 +2,10 @@
     <div class="login">
       <form  @submit.prevent="redacted">
       <h1>РЕДАКТИРОВАНИЕ СУЩНОСТИ</h1>
-      <input class="input" type="text" v-model="scrab.name" required/>
-        <input class="input" type="number"  v-model="scrab.min_cost" required/>
-        <input class="input" type="number"  v-model="scrab.max_cost" required/>
-        <input class="input" type="number" v-model="scrab.weight" required/>
+      <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model="scrab.name" required/>
+        <input class="input" type="number" placeholder="МИН ЦЕНА" v-model="scrab.min_cost" required/>
+        <input class="input" type="number" placeholder="МАКС ЦЕНА" v-model="scrab.max_cost" required/>
+        <input class="input" type="number" placeholder="ВЕС" v-model="scrab.weight" required/>
         <p class="form_text">ПРОВОДИТ ТОК:</p>
        <select class="input"  v-model="scrab.conducts_electricity_id" >
             <option value="1">да</option>

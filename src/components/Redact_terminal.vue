@@ -2,8 +2,8 @@
     <div class="login">
       <form  @submit.prevent="redacted">
       <h1>РЕДАКТИРОВАНИЕ ТЕРМИНАЛА</h1>
-      <input class="input" type="text" v-model="terminal.title" required/>
-        <input class="input" type="text"  v-model="terminal.description" required/> 
+      <input class="input" type="text" placeholder="КОМАНДА" v-model="terminal.title" required/>
+        <input class="input" type="text" placeholder="ОПИСАНИЕ" v-model="terminal.description" required/> 
         
       <div>
         <button class="but_reg" type="submit" >РЕДАКТИРОВАТЬ</button>

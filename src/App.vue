@@ -5,9 +5,9 @@
     <img class="logo" src="./assets/img/Site-logo.webp" >
     </router-link>
     
-      <div class="search">
-          <input  type="text" name="search">
-          <button class="scan">ПОИСК</button>
+      <div >
+          <input  type="text" >
+          <button class="scan" >ПОИСК</button>
           <div class="option">
             <router-link to="/viewDiscussions" class="discussions">ОБСУЖДЕНИЯ</router-link>
             

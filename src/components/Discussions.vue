@@ -5,25 +5,40 @@
     <div class="discussions-descriptions">
       <p >{{ props.discussions.name }}</p>
       <p >{{ props.discussions.user_id  }} </p>
-      
     </div> 
+    <div class="button_card_disc" v-if="role_id==1">
+    <button class="terminal-delete" @click="deleted">Х</button>
+    <!-- <button class="terminal-redact"><router-link class="router" :to="{ name: 'Redact_discussions', params: { id: props.discussions.id, name: props.discussions.name, user_id: props.discussions.user_id } }">РЕДАКТИРОВАТЬ</router-link></button> -->
+    
+  </div>
    
   </div>
 
 </template>
 
 <script setup>
-// import { ref } from "vue";
+import { ref } from "vue";
 // import {useStore} from "vuex";
-// const store = useStore();
+// const store = useStore()
+import {deleteDiscussions} from "../api/discussions.js";
 
 import { useRouter } from "vue-router";
 const router = useRouter();
-
+let role_id = ref(localStorage.getItem('role_id'));
 const props = defineProps({
   discussions: Object
   
 })
+const emit = defineEmits(['delete']);
+
+const deletedDiscussions = {
+id: props.discussions.id
+}
+
+async function deleted() {
+await deleteDiscussions(deletedDiscussions);
+
+}
 
 
 </script>
@@ -39,6 +54,11 @@ const props = defineProps({
       min-height: 65px;
       width: 50px;
       
+  }
+  .button_card_disc{
+    display: flex;
+    justify-content: flex-end;
+    
   }
   .discussions-item{
     display: flex;

@@ -1,12 +1,4 @@
-<!-- <template>
-    <div class="title">
-      <h1>ОБСУЖДЕНИЯ</h1>
-    </div>
-        <div class="info">
-            <Discussions v-for="discussions in discussions"  :discussions="discussions"></Discussions> 
-            
-        </div>
-</template> -->
+
 <template>
   <div class="title">
     <h1>ОБСУЖДЕНИЯ</h1>

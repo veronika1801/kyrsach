@@ -9,6 +9,8 @@ export async function registerUser({ login, password }) {
         });
         if (response.status === 200) {                              
             const token = response.data.token;
+            const role_id = response.data.user.role_id;
+            localStorage.setItem('role_id', role_id);
             localStorage.setItem('token', token);
             return { token, error: null };
         } else {

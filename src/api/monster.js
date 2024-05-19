@@ -46,3 +46,13 @@ export async function redactMonster({id, name, healt, damage, quantity, stun_id}
         throw error;
     }
 }
+export async function searchMonster(query) {
+    try {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/searchMonster?search=${query}`,{
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching monster:", error);
+        throw error;
+    }
+}

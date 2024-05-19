@@ -20,6 +20,8 @@ import Redact_moon from "../components/Redact_moon.vue";
 import Redact_item from "../components/Redact_item.vue";
 import Redact_scrab from "../components/Redact_scrab.vue";
 import Redact_terminal from "../components/Redact_terminal.vue";
+import SearchPage from "../pages/SearchPage.vue";
+// import Redact_discussions from "../components/Redact_discussions.vue";
 
 const router = createRouter({
   
@@ -35,6 +37,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginPage
+    },
+    {
+      path: '/searchMonster',
+      name: 'search',
+      component: SearchPage
     },
     {
         path: '/',
@@ -72,6 +79,12 @@ const router = createRouter({
       component: Redact_monster,
       props: true 
     },
+    // {
+    //   path: '/Redact_discussions/:id',
+    //   name: 'Redact_discussions',
+    //   component: Redact_discussions,
+    //   props: true 
+    // },
     {
       path: '/Redact_scrab/:id',
       name: 'Redact_scrab',

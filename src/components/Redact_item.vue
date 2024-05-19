@@ -2,14 +2,14 @@
     <div class="login">
       <form  @submit.prevent="redacted">
       <h1>РЕДАКТИРОВАНИЕ ПРЕДМЕТА</h1>
-      <input class="input" type="text"  v-model="item.name" required/>
+      <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model="item.name" required/>
         <p class="form_text">ТИП:</p>
        <select class="input"  v-model="item.type_id" >
             <option value="1">механизм</option>
             <option value="2">оружие</option>
         </select> 
-        <input class="input" type="number"  v-model="item.cost" required/>
-        <input class="input" type="number"  v-model="item.weight" required/>
+        <input class="input" type="number" placeholder="ЦЕНА" v-model="item.cost" required/>
+        <input class="input" type="number" placeholder="ВЕС" v-model="item.weight" required/>
         <p class="form_text">ИМЕЕТ БАТАРЕЮ:</p>
        <select class="input"  v-model="item.presence_of_battery_id" >
             <option value="1">да</option>

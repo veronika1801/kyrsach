@@ -2,10 +2,10 @@
   <div class="login">
     <form  @submit.prevent="redacted">
     <h1>РЕДАКТИРОВАНИЕ СУЩНОСТИ</h1>
-      <input class="input" type="text" v-model= "monster.name">
-      <input class="input" type="text"  v-model= "monster.healt" required/>
-      <input class="input" type="number"  v-model= "monster.damage" required/>
-      <input class="input" type="number"  v-model= "monster.quantity" required/>
+      <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model= "monster.name">
+      <input class="input" type="text" placeholder="ЗДОРОВЬЕ" v-model= "monster.healt" required/>
+      <input class="input" type="number" placeholder="СИЛА УРОНА" v-model= "monster.damage" required/>
+      <input class="input" type="number" placeholder="КОЛ-ВО" v-model= "monster.quantity" required/>
       <p class="form_text">ИМЕЕТСЯ ЛИ ОГЛУШЕНИЕ:</p>
      
      <select class="input"  v-model= "monster.stun_id" >
