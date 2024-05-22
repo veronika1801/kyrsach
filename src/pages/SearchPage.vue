@@ -8,8 +8,8 @@
           <Monster v-for="monster in searchResults" :key="monster.id" :monster="monster" />
         </div>
       </div>
-      <div v-else>
-        <p>Ничего не найдено</p>
+      <div v-else class="not_found">
+        <p>НИЧЕГО НЕ НАЙДЕНО</p>
       </div>
     
   </template>
@@ -44,7 +44,8 @@
     background-color: #D9D9D9;
     border-radius: 20px;
     height:25px;
-    width:350px
+    width:350px;
+    margin-left: 100px;
   }
   .info-search{
     display: flex;
@@ -52,5 +53,8 @@
       gap: 80px;
      padding-left:100px;
      padding-top: 60px;
+  }
+  .not_found{
+    margin-left: 100px;
   }
 </style>

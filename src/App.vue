@@ -6,10 +6,9 @@
     </router-link>
     
       <div >
-          <input  type="text" >
-          <button class="scan" >ПОИСК</button>
+         <h2>ОНЛАЙН-ЭНЦИКЛОПЕДИЯ</h2>
           <div class="option">
-            <router-link to="/viewDiscussions" class="discussions">ОБСУЖДЕНИЯ</router-link>
+            <router-link to="/viewDiscussions" class="discussions">НОВОСТИ</router-link>
             
             
             <select class="opt" @change="handleSelect">
@@ -17,7 +16,8 @@
               <option value="/viewMoon">ЛУНЫ</option>
               <option value="/viewMonster">МОНСТРЫ</option>
               <option value="/viewItem">ПРЕДМЕТЫ</option>
-              
+              <option value="/viewTerminal">ТЕРМИНАЛ</option>
+              <option value="/viewScrab">ЛУТ</option>
             </select>
           </div>
   
@@ -68,7 +68,7 @@ const handleSelect = (event) => {
   <style>
   
   body {
-    text-align: center;
+    /* text-align: center; */
     margin: 0 185px;
     color: white;
     background-color: #232323;  

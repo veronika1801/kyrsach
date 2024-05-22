@@ -1,8 +1,8 @@
 
 <template>
   <div class="title">
-    <h1>ОБСУЖДЕНИЯ</h1>
-    <button class="add" v-if="setToken"><router-link class="router" to="/Add_discussions">СОЗДАТЬ ТЕМУ</router-link></button>
+    <h1>НОВОСТИ</h1>
+    <button class="add" v-if="setToken"><router-link class="router" to="/Add_discussions">СОЗДАТЬ НОВОСТЬ</router-link></button>
   </div>
   
   <div class="test">

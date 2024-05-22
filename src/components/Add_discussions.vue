@@ -1,7 +1,7 @@
 <template>
-    <div class="login">
+    <div class="general">
       <form  @submit.prevent="add">
-      <h1>СОЗДАНИЕ ТЕМЫ</h1>
+      <h1>СОЗДАНИЕ НОВОСТИ</h1>
         <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model="add_Discussions.name" required/>
         <input class="input" type="text" placeholder="ОПИСАНИЕ" v-model="add_Discussions.description" required/>
          

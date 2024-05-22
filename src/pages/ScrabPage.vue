@@ -1,6 +1,6 @@
 <template>
     <div class="title">
-      <h1>ЛОМ</h1>
+      <h1>ЛУТ</h1>
       <button class="add" v-if="role_id==1"><router-link class="router" to="/Add_scrab">ДОБАВИТЬ</router-link></button>
     </div>
         <div class="info">

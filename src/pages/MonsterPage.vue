@@ -1,6 +1,6 @@
 <template>
     <div class="title">
-      <h1>СУЩНОСТИ</h1>
+      <h1>МОНСТРЫ</h1>
       <div class="monster_button">
       <button class="add" v-if="role_id==1"><router-link class="router" to="/Add_monster">ДОБАВИТЬ</router-link></button>
       <button class="add" ><router-link class="router" to="/searchMonster">ПОИСК</router-link></button>

@@ -1,5 +1,5 @@
 <template>
-    <div class="login">
+    <div class="general">
       <form  @submit.prevent="add">
       <h1>СОЗДАНИЕ ЛУНЫ</h1>
         <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model="add_Moon.name" required/>

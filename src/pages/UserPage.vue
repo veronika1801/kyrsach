@@ -1,11 +1,16 @@
 <template>
-  <div class="account">
-      
+  <div class="title">
+    <h1>АККАУНТ</h1>
+  </div>
+  
+      <div class="user_data">
       <p>ИМЯ ПОЛЬЗОВАТЕЛЯ:{{ user.login }}</p>
       <p class="data">АВАТАР:{{ user.avatar }}</p>
+    </div>
+    
       <button class="but_reg" type="submit">РЕДАКТИРОВАТЬ</button>
       <button class="but_reg" type="submit">УДАЛИТЬ</button>
-    </div>
+   
     </template>
     <script setup>
 
@@ -28,3 +33,14 @@ onMounted(async () => {
 });
     
     </script> 
+    <style>
+
+  .user_data{
+   margin-left:100px ;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+  }
+  
+  </style>

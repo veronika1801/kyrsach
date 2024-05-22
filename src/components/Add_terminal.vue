@@ -1,5 +1,5 @@
 <template>
-    <div class="login">
+    <div class="general">
       <form  @submit.prevent="add">
       <h1>СОЗДАНИЕ КОМАНДЫ</h1>
         <input class="input" type="text" placeholder="КОМАНДА" v-model="add_Terminal.title" required/>

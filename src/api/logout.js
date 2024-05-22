@@ -4,7 +4,6 @@ import { ref } from "vue";
 const token = ref(localStorage.getItem('token'));
 const role_id = ref(localStorage.getItem('role_id'));
 export const logout = async () => {
-    try {
         const response = await axios.get(`${import.meta.env.VITE_API_URL}/logout`, {
             headers: {
                 Authorization: `Bearer ${token.value}`,
@@ -14,11 +13,6 @@ export const logout = async () => {
         clearToken();
         
         return response.data.message;
-    } catch (error) {
-        
-        clearToken();
-        throw error;
-    }
 };
 
 const clearToken = () => {

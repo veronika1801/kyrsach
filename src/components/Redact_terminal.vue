@@ -1,5 +1,5 @@
 <template>
-    <div class="login">
+    <div class="general">
       <form  @submit.prevent="redacted">
       <h1>РЕДАКТИРОВАНИЕ ТЕРМИНАЛА</h1>
       <input class="input" type="text" placeholder="КОМАНДА" v-model="terminal.title" required/>

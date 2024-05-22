@@ -1,5 +1,5 @@
 <template>
-    <div class="login">
+    <div class="general">
       <form @submit.prevent="register" >
       <h1>РЕГИСТРАЦИЯ</h1>
         <input class="input" type="text" placeholder="ИМЯ ПОЛЬЗОВАТЕЛЯ" v-model="userRegister.login" required/>
