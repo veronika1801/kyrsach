@@ -68,7 +68,7 @@ id: props.scrab.id
 }
 
 function getImageUrl(avatar) {
-    return `/images/${avatar}`;
+    return `http://api.hikilist.ru:7777/public/${avatar}`;
 }
 
 async function deleted() {

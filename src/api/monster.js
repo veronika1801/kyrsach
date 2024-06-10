@@ -22,6 +22,7 @@ export async function redactMonster({id, name, healt, damage, quantity, stun_id,
                 'Content-Type': 'multipart/form-data'
             }
         });
+        
         return response.data;
 }
 export async function searchMonster(query) {

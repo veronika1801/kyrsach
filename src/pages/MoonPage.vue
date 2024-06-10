@@ -39,7 +39,7 @@ onMounted(async () => {
   .info{
       display: flex;
       flex-wrap: wrap;
-      gap: 80px;
+      gap: 130px;
      padding-left:100px;
   }
   .title{

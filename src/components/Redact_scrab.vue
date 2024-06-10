@@ -1,7 +1,7 @@
 <template>
     <div class="general">
       <form  @submit.prevent="redacted">
-      <h1>РЕДАКТИРОВАНИЕ ПРЕДМЕТА</h1>
+      <h1>РЕДАКТИРОВАНИЕ ЛУТА</h1>
       <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model="scrab.name" required/>
       <input class="input" type="file" @change="handleFileChange" />
         <input class="input" type="number" placeholder="МИН ЦЕНА" v-model="scrab.min_cost" required/>
