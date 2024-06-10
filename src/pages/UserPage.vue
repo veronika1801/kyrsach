@@ -4,35 +4,39 @@
   </div>
   
       <div class="user_data">
-      <p>ИМЯ ПОЛЬЗОВАТЕЛЯ:{{ user.login }}</p>
-      <p class="data">АВАТАР:{{ user.avatar }}</p>
+      <p>ИМЯ ПОЛЬЗОВАТЕЛЯ: {{ user.login }}</p>
+      
     </div>
-    
-      <button class="but_reg" type="submit">РЕДАКТИРОВАТЬ</button>
-      <button class="but_reg" type="submit">УДАЛИТЬ</button>
-   
+
+      <button class="but_reg" @click="deleted">УДАЛИТЬ</button>
     </template>
-    <script setup>
+
+<script setup>
 
 import {onMounted, ref } from "vue";
 import {getUser} from "../api/user.js";
+import {deleteUser} from "../api/user.js";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const user = ref({}); 
+const emit = defineEmits(['delete']);
 
 const renderUser = async () => {
-  try {
      const response = await getUser();
      user.value = response; 
-  } catch (error) {
-    console.error("Error rendering user:", error);
-  }
 };
 
 onMounted(async () => {
   await renderUser();
 });
-    
-    </script> 
+
+async function deleted() {
+  await deleteUser();
+  router.push('/')
+}
+</script> 
+
     <style>
 
   .user_data{

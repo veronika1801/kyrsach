@@ -6,23 +6,14 @@ export async function registerUser({ login, password }) {
             headers: {
                 'Content-Type': 'application/json',
             }
-        });
-        if (response.status === 200) {                              
+        });                    
             const token = response.data.token;
             const role_id = response.data.user.role_id;
             localStorage.setItem('role_id', role_id);
             localStorage.setItem('token', token);
             return { token, error: null };
-        } else {
-            throw new Error('Ошибка регистрации');
         }
-    } catch (error) {
-        if (error.response) {
-            if (error.response.status === 400) {
-                throw new Error('Ошибка валидации полей');
-            } else {
-                throw new Error('Произошла ошибка при регистрации');
-            }
-        }
+     catch (error) {
+        return { token: null, error: "такой пользователь уже создан" };
     }
 }

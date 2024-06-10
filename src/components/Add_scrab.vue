@@ -1,8 +1,9 @@
 <template>
     <div class="general">
       <form  @submit.prevent="add">
-      <h1>СОЗДАНИЕ ПРЕДМЕТА</h1>
+      <h1>СОЗДАНИЕ ЛУТА</h1>
         <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model="add_Scrab.name" required/>
+        <input class="input" type="file" @change="handleFileChange" required /> 
         <input class="input" type="number" placeholder="МИН ЦЕНА" v-model="add_Scrab.min_cost" required/>
         <input class="input" type="number" placeholder="МАКС ЦЕНА" v-model="add_Scrab.max_cost" required/>
         <input class="input" type="number" placeholder="ВЕС" v-model="add_Scrab.weight" required/>
@@ -37,18 +38,16 @@ const add_Scrab = {
     weight: null,
     conducts_electricity_id: null,
     two_handed_id: null,
-    
-
+    avatar: null,
 }
+
+const handleFileChange = (event) => {
+  add_Scrab.avatar = event.target.files[0]; 
+};
+
 async function add() {
- 
- await addScrab(add_Scrab);
- router.push('/viewScrab')
-
+  await addScrab(add_Scrab);
+  router.push('/viewScrab')
 }
-
-
 </script>
-<style>
- 
-</style>
+<style></style>

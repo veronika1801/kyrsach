@@ -2,13 +2,10 @@ import axios from "axios";
 
 export async function getTerminal() {
         const response = await axios.get(`${import.meta.env.VITE_API_URL}/viewTerminal`);
-        return response.data;
-
+        return response.data.Terminals;
 }
 export async function deleteTerminal({ id }) {
-        const response = await axios.delete(`${import.meta.env.VITE_API_URL}/deleteTerminal?id=${ id }`, {
-          
-        });
+        const response = await axios.delete(`${import.meta.env.VITE_API_URL}/deleteTerminal?id=${ id }`);
         return response.data;
 }
 export async function addTerminal({title, description }) {

@@ -17,28 +17,24 @@
     
     
   
-  <script setup>
-  import { ref, onMounted, watch } from 'vue';
-  import { searchMonster } from '../api/monster.js';
-  import Monster from "../components/Monster.vue";
-  
-  const searchQuery = ref('');
-  const searchResults = ref([]);
+<script setup>
 
+import { ref, onMounted, watch } from 'vue';
+import { searchMonster } from '../api/monster.js';
+import Monster from "../components/Monster.vue";
   
-  onMounted(async () => {
-    
-    await getSearch(''); 
-  });
+const searchQuery = ref('');
+const searchResults = ref([]);
+
+onMounted(async () => {
+  await getSearch(''); 
+});
   
-  watch(searchQuery, async (newQuery) => {
-    
-      const results = await searchMonster(newQuery);
-      searchResults.value = results;
-    
-    
-  });
-  </script>
+watch(searchQuery, async (newQuery) => {
+  const results = await searchMonster(newQuery);
+  searchResults.value = results;
+});
+</script>
   <style>
 .search{
     background-color: #D9D9D9;

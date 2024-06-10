@@ -21,13 +21,11 @@ import Redact_item from "../components/Redact_item.vue";
 import Redact_scrab from "../components/Redact_scrab.vue";
 import Redact_terminal from "../components/Redact_terminal.vue";
 import SearchPage from "../pages/SearchPage.vue";
-// import Redact_discussions from "../components/Redact_discussions.vue";
 
 const router = createRouter({
   
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-
     {
       path: '/register',
       name: 'register',
@@ -52,12 +50,12 @@ const router = createRouter({
       path: '/Add_terminal',
       name: 'Add_terminal',
       component: Add_terminal
-  },
-  {
+    },
+    {
     path: '/Add_discussions',
     name: 'Add_discussions',
     component: Add_discussions
-},
+    },
     {
       path: '/Add_moon',
       name: 'Add_moon',
@@ -79,12 +77,6 @@ const router = createRouter({
       component: Redact_monster,
       props: true 
     },
-    // {
-    //   path: '/Redact_discussions/:id',
-    //   name: 'Redact_discussions',
-    //   component: Redact_discussions,
-    //   props: true 
-    // },
     {
       path: '/Redact_scrab/:id',
       name: 'Redact_scrab',
@@ -151,10 +143,7 @@ const router = createRouter({
       component: UserPage
     },
     
-  ]
-  
- 
-  
+  ] 
 })
 
 export default router

@@ -9,16 +9,17 @@
         
       </div>
     </form>
-    <p v-if="error" class="error-message">{{ error }}</p>
+    <p >{{ error }}</p>
   </div>
   </template>
 
   <script setup>
-  
+
+  import { ref } from 'vue';
   import { useRouter } from 'vue-router';
   import { log } from '../api/login.js';
 
-  
+  const error = ref(null);
   const router = useRouter();
 
   const userLogin = {
@@ -26,15 +27,15 @@
   password: null,
 }
   
-  async function submitForm() {
-  
-    await log(userLogin);
-    router.push('/')
+async function submitForm() {
+  const { token, error: authError } =await log(userLogin);
+  if (token) {
+    router.push('/');
+  } else {
+    error.value = authError;
+  }
 }
- 
-
-
-  </script>
+</script>
 
   <style>
   form{

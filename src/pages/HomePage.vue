@@ -30,7 +30,7 @@
           </div>
           <div >
             <p>Zeekerss</p>
-            <p>24 октября 2023</p>
+            <p>23 октября 2023</p>
             <p>ужасы, выживание</p>
             <p>кооперативный</p>
             <p>английский</p>
@@ -79,7 +79,7 @@
  .img_card{
   width: 350px;
   height: 380px;
-  /* margin-top: 20px; */
+
   border-radius: 20px;
  }
  .info_card{
@@ -112,4 +112,6 @@
 .navigation:nth-child(even) {
   margin-top: 60px;
 }
-</style>
+
+</style> 
+

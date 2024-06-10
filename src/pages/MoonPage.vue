@@ -15,8 +15,6 @@
 <script setup>
 
 import Moon from "../components/Moon.vue";
-
-
 import {onMounted, ref} from "vue";
 import { getMoon} from "../api/moon.js";
 
@@ -30,9 +28,6 @@ const renderMoon = async () => {
     console.error("Error rendering moon:", error);
   }
 };
-
-
-
 
 onMounted(async () => {
   await renderMoon();

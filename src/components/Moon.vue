@@ -1,17 +1,18 @@
 <template>
   <div class="card_data" >
     <div class="button_card" v-if="role_id==1">
-      <button class="redact"><router-link class="router-redact" :to="{ name: 'Redact_moon', params: { id: props.moon.id, name: props.moon.name, tier_id: props.moon.tier_id, cost: props.moon.cost, number_of_items: props.moon.number_of_items, weather: props.moon.weather  } }">РЕДАКТИРОВАТЬ</router-link></button>
+      <button class="redact"><router-link class="router-redact" :to="{ name: 'Redact_moon', params: { id: props.moon.id, name: props.moon.name, tier_id: props.moon.tier_id, cost: props.moon.cost, number_of_items: props.moon.number_of_items, weather: props.moon.weather, avatar: props.moon.avatar, avatar: props.moon.avatar  } }">РЕДАКТИРОВАТЬ</router-link></button>
       <button class="delete" @click="deleted">Х</button> 
     </div>
-      <!-- <p class="img_info">{{ props.moon.avatar }}</p> -->
-      <img class="img_card" src="../assets/img/Lethal_Company_cover.jpg" alt="">
+      
+    <img class="img_card" :src="getImageUrl(props.moon.avatar)" alt="Аватар" />
+      
         <div class="info_card">
           <div>
             <p>НАЗВАНИЕ</p>
             <p>СЛОЖНОСТЬ</p>
             <p>ЦЕНА</p>
-            <p>КОЛ-ВО ПРЕДМЕТОВ</p>
+            <p>КОЛ-ВО ЛУТА</p>
             <p>ПОГОДА</p>
           </div>
       <div >    
@@ -27,17 +28,12 @@
 </template>
 <script setup>
 import { ref } from "vue";
-// import {useStore} from "vuex";
 import {deleteMoon} from "../api/moon.js";
-
-import { useRouter } from "vue-router";
-const router = useRouter();
-// const store = useStore();
-
 
 const props = defineProps({
   moon: Object
 })
+
 const tier_id = props.moon.tier_id;
 let tier =0 
 switch (tier_id) {
@@ -53,7 +49,6 @@ switch (tier_id) {
     case 4:
      tier = "безопасная"
     break;
-  
 }
 
 let role_id = ref(localStorage.getItem('role_id'));
@@ -63,13 +58,13 @@ const deletedMoon = {
 id: props.moon.id
 }
 
-async function deleted() {
-await deleteMoon(deletedMoon);
-
-
+function getImageUrl(avatar) {
+    return `/images/${avatar}`;
 }
 
-
+async function deleted() {
+await deleteMoon(deletedMoon);
+}
 </script>
 
 <style>

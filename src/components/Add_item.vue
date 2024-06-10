@@ -3,6 +3,7 @@
       <form  @submit.prevent="add">
       <h1>СОЗДАНИЕ ПРЕДМЕТА</h1>
         <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model="add_Item.name" required/>
+        <input class="input" type="file" @change="handleFileChange" required /> 
         <p class="form_text">ТИП:</p>
        <select class="input"  v-model="add_Item.type_id" >
             <option value="1">механизм</option>
@@ -41,18 +42,16 @@ const add_Item = {
     weight: null,
     presence_of_battery_id: null,
     conducts_electricity_id: null,
-    
-
+    avatar: null,
 }
+
+const handleFileChange = (event) => {
+  add_Item.avatar = event.target.files[0]; 
+};
+
 async function add() {
- 
- await addItem(add_Item);
- router.push('/viewItem')
-
+  await addItem(add_Item);
+  router.push('/viewItem')
 }
-
-
 </script>
-<style>
- 
-</style>
+<style></style>

@@ -8,28 +8,27 @@
         </div>
 </template>
   
-  <script setup>
+<script setup>
   
-  import Scrab from "../components/Scrab.vue";
+import Scrab from "../components/Scrab.vue";
+import {onMounted, ref} from "vue";
+import {getScrab} from "../api/scrab.js";
+
+let role_id = ref(localStorage.getItem('role_id'));
+const scrab = ref([]);
   
+const renderScrab = async () => {
+  try {
+    scrab.value = await getScrab();
+  } catch (error) {
+    console.error("Error rendering monster:", error);
+  }
+};
   
-  import {onMounted, ref} from "vue";
-  import {getScrab} from "../api/scrab.js";
-  let role_id = ref(localStorage.getItem('role_id'));
-  const scrab = ref([]);
-  
-  const renderScrab = async () => {
-    try {
-        scrab.value = await getScrab();
-    } catch (error) {
-      console.error("Error rendering monster:", error);
-    }
-  };
-  
-  onMounted(async () => {
-    await renderScrab();
-  });
-  </script>
+onMounted(async () => {
+  await renderScrab();
+});
+</script>
   
   <style>
     

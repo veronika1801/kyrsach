@@ -3,6 +3,7 @@
       <form  @submit.prevent="redacted">
       <h1>РЕДАКТИРОВАНИЕ ПРЕДМЕТА</h1>
       <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model="item.name" required/>
+      <input class="input" type="file" @change="handleFileChange" />
         <p class="form_text">ТИП:</p>
        <select class="input"  v-model="item.type_id" >
             <option value="1">механизм</option>
@@ -30,37 +31,37 @@
   </div>
   </template>
   
-  <script setup>
-  import {ref } from "vue";
-  import {redactItem} from "../api/item.js";
-  import { useRouter } from "vue-router";
-  import { useRoute } from "vue-router";
+<script setup>
+
+import {ref } from "vue";
+import {redactItem} from "../api/item.js";
+import { useRouter } from "vue-router";
+import { useRoute } from "vue-router";
   
-  const route = useRoute();
-  const router = useRouter();
+const route = useRoute();
+const router = useRouter();
   
-  
-  const item = ref({
+const item = ref({
   id: route.params.id,
   name: route.params.name,
   type_id: route.params.type_id,
   cost: route.params.cost,
   weight: route.params.weight,
   presence_of_battery_id: route.params.presence_of_battery_id,
-  conducts_electricity_id: route.params.conducts_electricity_id
-  });
-  
-  
-  async function redacted() {
-  
+  conducts_electricity_id: route.params.conducts_electricity_id,
+  avatar: route.params.avatar
+});
+
+const handleFileChange = (event) => {
+  item.avatar = event.target.files[0]; 
+};
+
+async function redacted() {
   await redactItem(item.value);
   router.push('/viewItem')
-  
-  }
-  
-  
-  
-  </script>
+}
+
+</script>
   <style>
   .select{
     width: 400px;

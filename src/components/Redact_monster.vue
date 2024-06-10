@@ -1,8 +1,9 @@
 <template>
   <div class="general">
     <form  @submit.prevent="redacted">
-    <h1>РЕДАКТИРОВАНИЕ СУЩНОСТИ</h1>
+    <h1>РЕДАКТИРОВАНИЕ МОНСТРА</h1>
       <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model= "monster.name">
+      <input class="input" type="file" @change="handleFileChange" /> 
       <input class="input" type="text" placeholder="ЗДОРОВЬЕ" v-model= "monster.healt" required/>
       <input class="input" type="number" placeholder="СИЛА УРОНА" v-model= "monster.damage" required/>
       <input class="input" type="number" placeholder="КОЛ-ВО" v-model= "monster.quantity" required/>
@@ -32,26 +33,24 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 const router = useRouter();
 
-
 const monster = ref({
-id: route.params.id,
-name: route.params.name,
-healt: route.params.healt,
-damage: route.params.damage,
-quantity: route.params.quantity,
-stun_id: route.params.stun_id,
-
+  id: route.params.id,
+  name: route.params.name,
+  healt: route.params.healt,
+  damage: route.params.damage,
+  quantity: route.params.quantity,
+  stun_id: route.params.stun_id,
+  avatar: route.params.avatar
 });
 
+const handleFileChange = (event) => {
+  monster.avatar = event.target.files[0]; 
+};
 
 async function redacted() {
-
-await redactMonster(monster.value);
-router.push('/viewMonster')
-
+  await redactMonster(monster.value);
+  router.push('/viewMonster')
 }
-
-
 
 </script>
 <style>

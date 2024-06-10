@@ -13,11 +13,9 @@
 </template>
 
 <script setup>
-  import { ref } from "vue";
-  import {deleteTerminal} from "../api/terminal.js";
-// import {useStore} from "vuex";
-// const store = useStore();
 
+import { ref } from "vue";
+import {deleteTerminal} from "../api/terminal.js";
 import { useRouter } from "vue-router";
 const router = useRouter();
 
@@ -32,10 +30,8 @@ id: props.terminal.id
 }
 
 async function deleted() {
-await deleteTerminal(deletedTerminal);
-
+  await deleteTerminal(deletedTerminal);
 }
-
 </script>
 
 

@@ -24,14 +24,8 @@ const add_Terminal = {
     description: null,
 }
 async function add() {
- 
- await addTerminal(add_Terminal);
- router.push('/viewTerminal')
-
+  await addTerminal(add_Terminal);
+  router.push('/viewTerminal')
 }
-
-
 </script>
-<style>
- 
-</style>
+<style></style>

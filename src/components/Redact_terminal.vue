@@ -14,35 +14,27 @@
   </div>
   </template>
   
-  <script setup>
-  import {ref } from "vue";
-  import {redactTerminal} from "../api/terminal.js";
-  import { useRouter } from "vue-router";
-  import { useRoute } from "vue-router";
+<script setup>
+
+import {ref } from "vue";
+import {redactTerminal} from "../api/terminal.js";
+import { useRouter } from "vue-router";
+import { useRoute } from "vue-router";
   
-  const route = useRoute();
-  const router = useRouter();
+const route = useRoute();
+const router = useRouter();
   
-  
-  const terminal = ref({
+const terminal = ref({
   id: route.params.id,
   title: route.params.title,
   description: route.params.description,
+});
 
-  
-  });
-  
-  
-  async function redacted() {
-  
+async function redacted() {
   await redactTerminal(terminal.value);
   router.push('/viewTerminal')
-  
-  }
-  
-  
-  
-  </script>
+}
+</script>
   <style>
   .select{
     width: 400px;

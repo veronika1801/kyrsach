@@ -17,10 +17,9 @@
 <script setup>
 
 import Terminal from "../components/Terminal.vue";
-
-
 import {onMounted, ref} from "vue";
 import {getTerminal} from "../api/terminal.js";
+
 let role_id = ref(localStorage.getItem('role_id'));
 const terminal = ref([]);
 

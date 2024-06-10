@@ -3,7 +3,7 @@
       <form  @submit.prevent="redacted">
         <h1>РЕДАКТИРОВАНИЕ ЛУНЫ</h1>
         <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model="moon.name" required/>
-        
+        <input class="input" type="file" @change="handleFileChange" />
         <p class="form_text">ВЫБЕРИТЕ СЛОЖНОСТЬ:</p> 
         <select class="input"  v-model="moon.tier_id" >
                <option value="1">тяжелая</option>
@@ -20,11 +20,12 @@
         
       </div>
     </form>
-    
+   
   </div>
   </template>
   
   <script setup>
+
   import {ref } from "vue";
   import {redactMoon} from "../api/moon.js";
   import { useRouter } from "vue-router";
@@ -32,29 +33,27 @@
   
   const route = useRoute();
   const router = useRouter();
-  
-  
+   
   const moon = ref({
-  id: route.params.id,
-  name: route.params.name,
-  tier_id: route.params.tier_id,
-  cost: route.params.cost,
-  number_of_items: route.params.number_of_items,
-  weather: route.params.weather,
-  
+    id: route.params.id,
+    name: route.params.name,
+    tier_id: route.params.tier_id,
+    cost: route.params.cost,
+    number_of_items: route.params.number_of_items,
+    weather: route.params.weather,
+    avatar: route.params.avatar
   });
   
-  
+  const handleFileChange = (event) => {
+  moon.avatar = event.target.files[0]; 
+};
+
   async function redacted() {
-  
-  await redactMoon(moon.value);
-  router.push('/viewMoon')
-  
+    await redactMoon(moon.value);
+    router.push('/viewMoon')
   }
-  
-  
-  
-  </script>
+
+</script>
   <style>
  
   </style>

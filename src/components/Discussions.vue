@@ -4,7 +4,7 @@
     <p class="discussions-id">{{ props.discussions.id }}</p> 
     <div class="discussions-descriptions">
       <p >{{ props.discussions.name }}</p>
-      <p >{{ props.discussions.user_id  }} </p>
+      <p >{{ props.discussions.description }} </p>
     </div> 
     <div class="button_card_disc" v-if="role_id==1">
     <button class="terminal-delete" @click="deleted">Х</button>
@@ -18,16 +18,11 @@
 
 <script setup>
 import { ref } from "vue";
-// import {useStore} from "vuex";
-// const store = useStore()
 import {deleteDiscussions} from "../api/discussions.js";
 
-import { useRouter } from "vue-router";
-const router = useRouter();
 let role_id = ref(localStorage.getItem('role_id'));
 const props = defineProps({
   discussions: Object
-  
 })
 const emit = defineEmits(['delete']);
 
@@ -37,13 +32,8 @@ id: props.discussions.id
 
 async function deleted() {
 await deleteDiscussions(deletedDiscussions);
-
 }
-
-
 </script>
-
-
 
 <style>
 

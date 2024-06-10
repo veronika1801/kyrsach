@@ -39,6 +39,7 @@
   </template>
 
 <script setup>
+
 import { ref } from "vue";
 import { useRouter } from 'vue-router';
 import { logout } from "./api/logout.js";
@@ -48,19 +49,16 @@ let setToken = ref(localStorage.getItem('token'));
 let setRole = ref(localStorage.getItem('role_id'));
 
 const logoutUser = async () => {
- 
-    await logout();
-    setRole = null;
-    setToken = null;
-    router.push('/login');
-  
+  await logout();
+  setRole = null;
+  setToken = null;
+  router.push('/login');
 }
+
 const handleSelect = (event) => {
   const selectedPath = event.target.value;
   router.push(selectedPath);
 };
-
-  
 </script>
 
   

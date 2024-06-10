@@ -9,15 +9,17 @@
         
       </div>
     </form>
-    
+    <p >{{ error  }}</p>
   </div>
   </template>
 
 <script setup>
 
+import { ref } from 'vue';
 import {registerUser} from "../api/registration.js";
 import { useRouter } from "vue-router";
 
+const error = ref(null);
 const router = useRouter();
 
 const userRegister = {
@@ -26,10 +28,12 @@ const userRegister = {
 }
 
 async function register() {
- 
-    await registerUser(userRegister);
-    router.push('/')
-
+  const { token, error: registrationError } = await registerUser(userRegister);
+  if (token) {
+  router.push('/');
+  } else {
+  error.value = registrationError;
+  }
 }
 </script>
 

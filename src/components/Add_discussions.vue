@@ -27,12 +27,6 @@ const add_Discussions = {
 async function add() {
  await addDiscussions(add_Discussions);
  router.push('/viewDiscussions')
-
-
 }
-
-
 </script>
-<style>
- 
-</style>
+<style></style>

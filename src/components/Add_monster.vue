@@ -1,8 +1,9 @@
 <template>
     <div class="general">
       <form  @submit.prevent="add">
-      <h1>СОЗДАНИЕ СУЩНОСТИ</h1>
+      <h1>СОЗДАНИЕ МОНСТРА</h1>
         <input class="input" type="text" placeholder="НАЗВАНИЕ" v-model="add_Monster.name" required/>
+        <input class="input" type="file" @change="handleFileChange" required /> 
         <input class="input" type="text" placeholder="ЗДОРОВЬЕ" v-model="add_Monster.healt" required/>
         <input class="input" type="number" placeholder="СИЛА УРОНА" v-model="add_Monster.damage" required/>
         <input class="input" type="number" placeholder="КОЛ-ВО" v-model="add_Monster.quantity" required/>
@@ -31,22 +32,22 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 const add_Monster = {
-    name: null,
-    healt: null,
-    damage: null,
-    quantity: null,
-    stun_id: null,
-    
-
+  name: null,
+  healt: null,
+  damage: null,
+  quantity: null,
+  stun_id: null,
+  avatar: null,
 }
+const handleFileChange = (event) => {
+  add_Monster.avatar = event.target.files[0]; 
+};
+
 async function add() {
- 
- await addMonster(add_Monster);
- router.push('/viewMonster')
+  await addMonster(add_Monster);
+  router.push('/viewMonster')
 
 }
-
-
 </script>
 <style>
   .select{

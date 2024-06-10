@@ -15,28 +15,28 @@
   
 </template>
   
-  <script setup>
+<script setup>
+
+import Discussions from "../components/Discussions.vue";
+import {onMounted, ref} from "vue";
+import {getDiscussions} from "../api/discussions.js";
+
+let setToken = ref(localStorage.getItem('token'));
+const discussions = ref([]);
   
-  import Discussions from "../components/Discussions.vue";
+const renderDiscussions = async () => {
+  try {
+    discussions.value = await getDiscussions();
+  } catch (error) {
+    console.error("Error rendering new:", error);
+  }
+};
   
-  
-  import {onMounted, ref} from "vue";
-  import {getDiscussions} from "../api/discussions.js";
-  let setToken = ref(localStorage.getItem('token'));
-  const discussions = ref([]);
-  
-  const renderDiscussions = async () => {
-    try {
-      discussions.value = await getDiscussions();
-    } catch (error) {
-      console.error("Error rendering new:", error);
-    }
-  };
-  
-  onMounted(async () => {
-    await renderDiscussions();
-  });
-  </script>
+onMounted(async () => {
+  await renderDiscussions();
+});
+
+</script>
   
   <style>
     .discussion{
